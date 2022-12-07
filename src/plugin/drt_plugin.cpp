@@ -395,6 +395,7 @@ void DRTPlugin::handleMessage(int inMessage, void * inParam) {
     }
 }
 
+#if __cplusplus < 201703L
 namespace std {
     template<> struct hash<lb::filesystem::path> {
         size_t operator()(const lb::filesystem::path& p) const { 
@@ -402,6 +403,7 @@ namespace std {
         }
     };
 }
+#endif // pre C++-17
 
 
 typedef std::unordered_map<lb::filesystem::path, lb::filesystem::file_time_type> plugin_last_modified_t;

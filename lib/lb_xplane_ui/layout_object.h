@@ -3,6 +3,7 @@
 #include "geometry.h"
 
 #include <algorithm>
+#include <cstdint>
 
 #include "XPLMDisplay.h"
 

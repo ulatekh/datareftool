@@ -18,6 +18,7 @@ bool SingleAxisLayoutContainer::isStretchableX() const {
         case LayoutAxis::HORIZONTAL:
             return std::any_of(widget_attributes.cbegin(), widget_attributes.cend(), [](const std::tuple<bool, bool> & attr) -> bool { return std::get<0>(attr); });
     }
+    return false;
 }
 
 bool SingleAxisLayoutContainer::isStretchableY() const {
@@ -28,6 +29,7 @@ bool SingleAxisLayoutContainer::isStretchableY() const {
         case LayoutAxis::HORIZONTAL:
             return std::any_of(widgets.cbegin(), widgets.cend(), [](const std::shared_ptr<LayoutObject> & obj) -> bool { return obj->isStretchableY(); });
     }
+    return false;
 }
 
 //divide up the space proprotionally as necessary.
